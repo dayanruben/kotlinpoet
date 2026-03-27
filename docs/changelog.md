@@ -3,19 +3,29 @@ Change Log
 
 ## Unreleased
 
- * New: Delete `:interop:javapoet` module. (#2292)
- * New: Add `TypeName.annotated()` convenience API for adding annotations to types (#2202)
- * New: Add support for type aliases in types.
- * New: Add `FileSpec.addImport(MemberName)` to explicitly import a member (#2198)
- * New: Add `NameAllocator.contains` to check if a given tag is already allocated (#2154)
- * Fix: `emitNullable` correctly when deferring type in `CodeWriter`. (#2216)
- * Fix: `FunSpec.beginControlFlow` to accept nullable arguments for consistency with `CodeBlock.beginControlFlow`. (#2174)
+## Version 2.3.0
+
+Thanks to [@haruue][haruue], [@hfhbd][hfhbd], [@yz4230][yz4230], [@mina-jaff][mina-jaff], [@BoD][BoD],
+[@RaoPrashanth][RaoPrashanth] for contributing to this release.
+
+_2026-05-27_
+
+ * New: Kotlin 2.3.20.
+ * New: KSP 2.3.6.
+ * New: Support for defining type aliases inside other types. (#2167)
+ * New: Add `TypeName.annotated()` convenience API for adding annotations to types. (#2281)
+ * New: Add `FileSpec.addImport(MemberName)` to explicitly import a member. (#2198)
+ * New: Add `NameAllocator.contains` to check if a given tag is already allocated. (#2160)
+ * New: `:interop:javapoet` module has been discontinued and is not published starting with this release. (#2292)
+ * New: In-development snapshots are now published to the Central Portal Snapshots repository at https://central.sonatype.com/repository/maven-snapshots/. (#2135)
  * Fix: Annotation array parameters with annotation elements now correctly handled. (#2142)
- * Fix: `KType.asTypeName` now correctly handles recursively bound generics (e.g. `T : Comparable<T>`). (#1914)
- * Fix: Don't convert multi-statement function to expression body. (#1979)
- * Fix: Escape `/*` and `*/` when emitting Kdoc. (#887)
- * Fix: Generate imports for extension members used via `%M` in KDocs. (#2189)
- * In-development snapshots are now published to the Central Portal Snapshots repository at https://central.sonatype.com/repository/maven-snapshots/.
+ * Fix: `KType.asTypeName` now correctly handles recursively bound generics (e.g. `T : Comparable<T>`). (#2162)
+ * Fix: Don't convert multi-statement function to expression body. (#2163)
+ * Fix: `FunSpec.beginControlFlow` now accepts nullable arguments for consistency with `CodeBlock.beginControlFlow`. (#2174)
+ * Fix: Ignore illegal characters inside escaped identifiers. (#2204)
+ * Fix: `emitNullable` correctly when deferring type in `CodeWriter`. (#2217)
+ * Fix: Escape `/*` and `*/` when emitting Kdoc. (#2258)
+ * Fix: Generate imports for extension members used via `%M` in KDocs. (#2266)
 
 ## Version 2.2.0
 
@@ -940,3 +950,6 @@ _2017-05-16_
  [ansehoon1999]: https://github.com/ansehoon1999
  [TheMrMilchmann]: https://github.com/TheMrMilchmann
  [IRus]: https://github.com/IRus
+ [haruue]: https://github.com/haruue
+ [yz4230]: https://github.com/yz4230
+ [mina-jaff]: https://github.com/mina-jaff
